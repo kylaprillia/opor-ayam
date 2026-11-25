@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opor Ayam | Kuliner Nusantara</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --maroon: #702B36;
+      --dark: #3E1C24;
+      --yellow: #E9BD45;
+      --cream: #FFF9ED;
+      --light: #F4EBD9;
+      --text: #49363A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      width: 100%;
+      min-height: 90px;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(110deg, #351820, #702B36 65%, #843B43);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 18px rgba(62,28,36,.15);
+    }
+
+    .logo {
+      color: var(--yellow);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 3vw, 40px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--cream);
+      font-size: 15px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .lang-btn {
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      background: transparent;
+      padding: 9px 17px;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .lang-btn:hover {
+      background: var(--yellow);
+      color: var(--dark);
+    }
+
+    .section-label {
+      color: var(--maroon);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .heading-line {
+      width: 65px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--maroon), var(--yellow));
+      margin: 20px auto 28px;
+      border-radius: 5px;
+    }
+
+    /* HOME */
+
+    .hero {
+      min-height: 650px;
+      padding: 80px 9%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+      background:
+        radial-gradient(ellipse at 8% 15%, rgba(233,189,69,.23), transparent 35%),
+        radial-gradient(ellipse at 90% 90%, rgba(112,43,54,.09), transparent 38%),
+        linear-gradient(120deg, #FFF9ED, #F7EEDC 55%, #F3E3C8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(112,43,54,.13);
+      border-radius: 50%;
+      top: -120px;
+      right: 36%;
+      box-shadow:
+        0 0 0 20px rgba(112,43,54,.025),
+        0 0 0 40px rgba(112,43,54,.025);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border: 2px solid rgba(233,189,69,.6);
+      border-radius: 50%;
+      bottom: -100px;
+      left: -60px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      color: var(--maroon);
+      font-size: clamp(48px, 6vw, 76px);
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 520px;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .hero-link {
+      display: inline-block;
+      padding: 13px 25px;
+      background: linear-gradient(110deg, #702B36, #943F48);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--maroon);
+      transition: .2s;
+    }
+
+    .hero-link:hover {
+      background: linear-gradient(110deg, #E9BD45, #F3D77D);
+      color: var(--dark);
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      width: 85px;
+      height: 85px;
+      background: linear-gradient(135deg, #E9BD45, #F5D77E);
+      top: -18px;
+      right: -18px;
+      z-index: -1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border: 9px solid white;
+      box-shadow: 0 12px 30px rgba(62,28,36,.15);
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 100px 12%;
+      background:
+        radial-gradient(circle at 0% 100%, rgba(233,189,69,.15), transparent 32%),
+        linear-gradient(130deg, #F4EBD9, #F9F0E1 55%, #EFE1CD);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border: 2px solid rgba(112,43,54,.12);
+      border-radius: 50%;
+      left: -65px;
+      top: 50px;
+      box-shadow: 0 0 0 14px rgba(112,43,54,.03);
+    }
+
+    .about::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 2px solid rgba(233,189,69,.65);
+      border-radius: 50%;
+      right: -45px;
+      bottom: 45px;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about h2,
+    .recipe h2,
+    .vlog h2,
+    .closing h2 {
+      color: var(--maroon);
+      font-size: clamp(36px, 4vw, 48px);
+      margin-bottom: 25px;
+    }
+
+    .about p {
+      font-size: 17px;
+      margin-bottom: 17px;
+    }
+
+    /* RECIPE */
+
+    .recipe {
+      padding: 100px 9%;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(233,189,69,.13), transparent 35%),
+        linear-gradient(135deg, #FFF9ED, #FCF4E7 55%, #F7EBD7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .recipe::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(112,43,54,.12);
+      border-radius: 50%;
+      right: -80px;
+      top: 100px;
+      box-shadow: 0 0 0 18px rgba(112,43,54,.025);
+    }
+
+    .recipe-heading {
+      text-align: center;
+      margin-bottom: 55px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .recipe-heading p {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .recipe-visuals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 65px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .recipe-visuals img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      background: var(--light);
+      border: 7px solid white;
+      box-shadow: 0 8px 25px rgba(62,28,36,.12);
+      transition: .3s;
+    }
+
+    .recipe-visuals img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(62,28,36,.16);
+    }
+
+    .recipe-details {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 55px;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .recipe-details h3 {
+      color: var(--maroon);
+      font-size: 29px;
+      margin-bottom: 22px;
+      padding-bottom: 13px;
+      border-bottom: 2px solid var(--yellow);
+    }
+
+    .recipe-details ul,
+    .recipe-details ol {
+      padding-left: 22px;
+    }
+
+    .recipe-details li {
+      padding: 7px 0;
+      font-size: 16px;
+    }
+
+    /* VLOG */
+
+    .vlog {
+      padding: 100px 9%;
+      background:
+        radial-gradient(ellipse at 90% 10%, rgba(233,189,69,.2), transparent 35%),
+        linear-gradient(120deg, #F4EBD9, #F9F0E1 55%, #EFE1CD);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vlog::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 2px solid rgba(112,43,54,.12);
+      border-radius: 50%;
+      left: -75px;
+      bottom: 30px;
+    }
+
+    .vlog-description {
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .video-container {
+      max-width: 950px;
+      margin: auto;
+      padding: 10px;
+      background: linear-gradient(135deg, white, #F7EBD6);
+      box-shadow: 12px 12px 0 var(--yellow);
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-container video {
+      width: 100%;
+      max-height: 540px;
+      background: var(--dark);
+    }
+
+    /* PENUTUP */
+
+    .closing {
+      padding: 90px 12%;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 0% 100%, rgba(233,189,69,.2), transparent 35%),
+        radial-gradient(ellipse at 100% 0%, rgba(255,255,255,.09), transparent 40%),
+        linear-gradient(120deg, #481D28, #702B36 55%, #843B43);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing::before,
+    .closing::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(233,189,69,.35);
+      border-radius: 50%;
+    }
+
+    .closing::before {
+      width: 220px;
+      height: 220px;
+      top: -120px;
+      left: -70px;
+      box-shadow: 0 0 0 18px rgba(233,189,69,.04),
+                  0 0 0 36px rgba(233,189,69,.04);
+    }
+
+    .closing::after {
+      width: 170px;
+      height: 170px;
+      bottom: -100px;
+      right: -50px;
+      box-shadow: 0 0 0 18px rgba(233,189,69,.04);
+    }
+
+    .closing .section-label {
+      color: var(--yellow);
+    }
+
+    .closing h2 {
+      color: var(--cream);
+    }
+
+    .closing .heading-line {
+      background: linear-gradient(90deg, var(--yellow), #FFF0BD);
+    }
+
+    .closing p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 17px;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      background: linear-gradient(100deg, #2E151D, #3E1C24);
+      color: var(--cream);
+      text-align: center;
+      padding: 23px;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      nav {
+        padding: 16px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .nav-right {
+        gap: 14px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+        gap: 40px;
+      }
+
+      .hero-image img {
+        height: 330px;
+      }
+
+      .recipe-visuals {
+        grid-template-columns: 1fr;
+      }
+
+      .recipe-visuals img {
+        height: 330px;
+      }
+
+      .recipe-details {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        justify-content: center;
+      }
+
+      .logo {
+        font-size: 35px;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 55px 6%;
+      }
+
+      .hero h1 {
+        font-size: 49px;
+      }
+
+      .hero-image img {
+        height: 260px;
+      }
+
+      .about,
+      .recipe,
+      .vlog {
+        padding: 70px 7%;
+      }
+
+      .closing {
+        padding: 75px 8%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Opor Ayam</div>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#home" data-id="Beranda" data-en="Home">Beranda</a></li>
+        <li><a href="#about" data-id="Tentang" data-en="About">Tentang</a></li>
+        <li><a href="#recipe" data-id="Resep" data-en="Recipe">Resep</a></li>
+        <li><a href="#vlog" data-id="Vlog" data-en="Vlog">Vlog</a></li>
+      </ul>
+
+      <button class="lang-btn" onclick="toggleLanguage()">EN</button>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="section-label"
+           data-id="Kuliner Tradisional Indonesia"
+           data-en="Traditional Indonesian Cuisine">
+        Kuliner Tradisional Indonesia
+      </div>
+
+      <h1>Opor Ayam</h1>
+
+      <div class="heading-line" style="margin: 0 0 25px;"></div>
+
+      <p data-id="Hidangan ayam berkuah santan dengan perpaduan rempah yang menjadi bagian dari kekayaan kuliner Indonesia. Kenali sejarah, bahan, dan cara pembuatannya melalui halaman ini."
+         data-en="A chicken dish cooked in coconut milk and spices, representing part of Indonesia's rich culinary heritage. Explore its background, ingredients, and preparation on this page.">
+        Hidangan ayam berkuah santan dengan perpaduan rempah yang menjadi bagian dari kekayaan kuliner Indonesia. Kenali sejarah, bahan, dan cara pembuatannya melalui halaman ini.
+      </p>
+
+      <a href="#about" class="hero-link"
+         data-id="Jelajahi"
+         data-en="Explore">
+        Jelajahi
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/opor-utama.jpg" alt="Opor ayam">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <div class="section-label"
+           data-id="Mengenal Hidangannya"
+           data-en="About the Dish">
+        Mengenal Hidangannya
+      </div>
+
+      <h2 data-id="Tentang Opor Ayam"
+          data-en="About Opor Ayam">
+        Tentang Opor Ayam
+      </h2>
+
+      <div class="heading-line"></div>
+
+      <p data-id="Opor ayam merupakan hidangan tradisional Indonesia yang dibuat dari daging ayam dan kuah santan. Hidangan ini memiliki cita rasa gurih dengan aroma rempah seperti serai, lengkuas, kunyit, ketumbar, dan daun salam."
+         data-en="Opor ayam is a traditional Indonesian dish made with chicken and coconut milk. It has a savory taste and an aromatic blend of spices such as lemongrass, galangal, turmeric, coriander, and Indonesian bay leaves.">
+        Opor ayam merupakan hidangan tradisional Indonesia yang dibuat dari daging ayam dan kuah santan. Hidangan ini memiliki cita rasa gurih dengan aroma rempah seperti serai, lengkuas, kunyit, ketumbar, dan daun salam.
+      </p>
+
+      <p data-id="Opor ayam sering disajikan dalam berbagai perayaan dan kegiatan keluarga, terutama saat Idulfitri. Hidangan ini biasanya disantap bersama ketupat, lontong, atau nasi."
+         data-en="Opor ayam is often served during celebrations and family gatherings, especially during Eid al-Fitr. It is commonly enjoyed with ketupat, lontong, or rice.">
+        Opor ayam sering disajikan dalam berbagai perayaan dan kegiatan keluarga, terutama saat Idulfitri. Hidangan ini biasanya disantap bersama ketupat, lontong, atau nasi.
+      </p>
+
+      <p data-id="Resep opor ayam memiliki beragam variasi di Indonesia. Perbedaan penggunaan bumbu dan cara memasak menghasilkan karakter rasa yang khas di setiap keluarga maupun daerah."
+         data-en="Opor ayam recipes have various adaptations across Indonesia. Differences in spices and cooking methods create distinctive flavors in different families and regions.">
+        Resep opor ayam memiliki beragam variasi di Indonesia. Perbedaan penggunaan bumbu dan cara memasak menghasilkan karakter rasa yang khas di setiap keluarga maupun daerah.
+      </p>
+    </div>
+  </section>
+
+  <!-- RECIPE -->
+  <section class="recipe" id="recipe">
+    <div class="recipe-heading">
+      <div class="section-label"
+           data-id="Panduan Memasak"
+           data-en="Cooking Guide">
+        Panduan Memasak
+      </div>
+
+      <h2 data-id="Resep Opor Ayam"
+          data-en="Opor Ayam Recipe">
+        Resep Opor Ayam
+      </h2>
+
+      <div class="heading-line"></div>
+
+      <p data-id="Berikut bahan-bahan dan langkah pembuatan opor ayam."
+         data-en="Here are the ingredients and steps for preparing opor ayam.">
+        Berikut bahan-bahan dan langkah pembuatan opor ayam.
+      </p>
+    </div>
+
+    <div class="recipe-visuals">
+      <img src="images/opor-recipe.jpg" alt="Hidangan opor ayam">
+      <img src="images/poster-resep.jpg" alt="Poster resep opor ayam">
+    </div>
+
+    <div class="recipe-details">
+      <div>
+        <h3 data-id="Bahan-Bahan" data-en="Ingredients">Bahan-Bahan</h3>
+
+        <ul>
+          <li data-id="1 ekor ayam, potong sesuai selera" data-en="1 whole chicken, cut into pieces">1 ekor ayam, potong sesuai selera</li>
+          <li data-id="500 ml santan" data-en="500 ml coconut milk">500 ml santan</li>
+          <li data-id="2 batang serai, memarkan" data-en="2 stalks of lemongrass, bruised">2 batang serai, memarkan</li>
+          <li data-id="3 lembar daun salam" data-en="3 Indonesian bay leaves">3 lembar daun salam</li>
+          <li data-id="Lengkuas secukupnya" data-en="Galangal, as needed">Lengkuas secukupnya</li>
+          <li data-id="Garam dan gula secukupnya" data-en="Salt and sugar, to taste">Garam dan gula secukupnya</li>
+          <li data-id="Minyak untuk menumis" data-en="Cooking oil">Minyak untuk menumis</li>
+        </ul>
+
+        <h3 style="margin-top:35px"
+            data-id="Bumbu Halus"
+            data-en="Spice Paste">
+          Bumbu Halus
+        </h3>
+
+        <ul>
+          <li data-id="6 siung bawang merah" data-en="6 shallots">6 siung bawang merah</li>
+          <li data-id="4 siung bawang putih" data-en="4 cloves of garlic">4 siung bawang putih</li>
+          <li data-id="3 butir kemiri" data-en="3 candlenuts">3 butir kemiri</li>
+          <li data-id="1 ruas kunyit" data-en="1 piece of turmeric">1 ruas kunyit</li>
+          <li data-id="Ketumbar secukupnya" data-en="Coriander, as needed">Ketumbar secukupnya</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 data-id="Cara Memasak" data-en="Cooking Instructions">Cara Memasak</h3>
+
+        <ol>
+          <li data-id="Haluskan bawang merah, bawang putih, kemiri, kunyit, dan ketumbar."
+              data-en="Blend the shallots, garlic, candlenuts, turmeric, and coriander into a paste.">
+            Haluskan bawang merah, bawang putih, kemiri, kunyit, dan ketumbar.
+          </li>
+          <li data-id="Panaskan minyak, kemudian tumis bumbu halus hingga harum."
+              data-en="Heat the oil and sauté the spice paste until fragrant.">
+            Panaskan minyak, kemudian tumis bumbu halus hingga harum.
+          </li>
+          <li data-id="Masukkan serai, daun salam, dan lengkuas. Aduk hingga tercampur."
+              data-en="Add the lemongrass, bay leaves, and galangal. Stir well.">
+            Masukkan serai, daun salam, dan lengkuas. Aduk hingga tercampur.
+          </li>
+          <li data-id="Masukkan potongan ayam, lalu aduk hingga ayam terbalut bumbu."
+              data-en="Add the chicken pieces and stir until they are coated with the spices.">
+            Masukkan potongan ayam, lalu aduk hingga ayam terbalut bumbu.
+          </li>
+          <li data-id="Tuangkan santan secara perlahan sambil terus diaduk."
+              data-en="Gradually pour in the coconut milk while stirring.">
+            Tuangkan santan secara perlahan sambil terus diaduk.
+          </li>
+          <li data-id="Masak dengan api sedang hingga ayam matang dan bumbu meresap."
+              data-en="Cook over medium heat until the chicken is fully cooked and the spices are absorbed.">
+            Masak dengan api sedang hingga ayam matang dan bumbu meresap.
+          </li>
+          <li data-id="Tambahkan garam dan gula sesuai selera. Opor ayam siap disajikan."
+              data-en="Season with salt and sugar to taste. The opor ayam is ready to serve.">
+            Tambahkan garam dan gula sesuai selera. Opor ayam siap disajikan.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- VLOG -->
+  <section class="vlog" id="vlog">
+    <div class="section-label"
+         data-id="Dokumentasi"
+         data-en="Documentation">
+      Dokumentasi
+    </div>
+
+    <h2 data-id="Proses Pembuatan Opor Ayam"
+        data-en="How Opor Ayam Is Made">
+      Proses Pembuatan Opor Ayam
+    </h2>
+
+    <div class="heading-line"></div>
+
+    <p class="vlog-description"
+       data-id="Dokumentasi proses pembuatan opor ayam, mulai dari persiapan bahan hingga hidangan selesai dimasak."
+       data-en="A documentation of the opor ayam preparation, from preparing the ingredients to completing the dish.">
+      Dokumentasi proses pembuatan opor ayam, mulai dari persiapan bahan hingga hidangan selesai dimasak.
+    </p>
+
+    <div class="video-container">
+      <video controls>
+        <source src="videos/video-opor.mp4" type="video/mp4">
+        Browser kamu tidak mendukung pemutaran video.
+      </video>
+    </div>
+  </section>
+
+  <!-- PENUTUP -->
+  <section class="closing">
+    <div class="section-label"
+         data-id="Kuliner Nusantara"
+         data-en="Indonesian Culinary Heritage">
+      Kuliner Nusantara
+    </div>
+
+    <h2 data-id="Opor Ayam dalam Tradisi Indonesia"
+        data-en="Opor Ayam in Indonesian Tradition">
+      Opor Ayam dalam Tradisi Indonesia
+    </h2>
+
+    <div class="heading-line"></div>
+
+    <p data-id="Opor ayam menunjukkan bagaimana bahan lokal seperti santan dan rempah-rempah diolah menjadi hidangan yang dikenal luas di Indonesia. Kehadirannya dalam berbagai perayaan juga memperlihatkan hubungan antara makanan, kebiasaan keluarga, dan tradisi masyarakat. Melalui pengenalan hidangan ini, kekayaan kuliner Nusantara dapat dipahami sebagai bagian dari warisan budaya Indonesia."
+       data-en="Opor ayam shows how local ingredients such as coconut milk and spices are combined to create a dish widely known in Indonesia. Its presence at various celebrations also reflects the connection between food, family customs, and community traditions. Learning about this dish offers a glimpse into Indonesia's diverse culinary heritage.">
+      Opor ayam menunjukkan bagaimana bahan lokal seperti santan dan rempah-rempah diolah menjadi hidangan yang dikenal luas di Indonesia. Kehadirannya dalam berbagai perayaan juga memperlihatkan hubungan antara makanan, kebiasaan keluarga, dan tradisi masyarakat. Melalui pengenalan hidangan ini, kekayaan kuliner Nusantara dapat dipahami sebagai bagian dari warisan budaya Indonesia.
+    </p>
+  </section>
+
+  <footer>
+    <p data-id="Opor Ayam | Kuliner Tradisional Indonesia"
+       data-en="Opor Ayam | Traditional Indonesian Cuisine">
+      Opor Ayam | Kuliner Tradisional Indonesia
+    </p>
+  </footer>
+
+  <script>
+    let currentLanguage = "id";
+
+    function toggleLanguage() {
+      currentLanguage = currentLanguage === "id" ? "en" : "id";
+
+      document.querySelectorAll("[data-id][data-en]").forEach(element => {
+        element.textContent = element.getAttribute("data-" + currentLanguage);
+      });
+
+      document.documentElement.lang = currentLanguage;
+
+      document.querySelector(".lang-btn").textContent =
+        currentLanguage === "id" ? "EN" : "ID";
+    }
+  </script>
+
+</body>
+</html>
