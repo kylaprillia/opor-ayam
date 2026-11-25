@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -416,9 +415,11 @@
       z-index: 1;
     }
 
-    .video-container video {
+    .video-container iframe {
+      display: block;
       width: 100%;
-      max-height: 540px;
+      aspect-ratio: 16 / 9;
+      border: 0;
       background: var(--dark);
     }
 
@@ -691,61 +692,76 @@
         <h3 data-id="Bahan-Bahan" data-en="Ingredients">Bahan-Bahan</h3>
 
         <ul>
-          <li data-id="1 ekor ayam, potong sesuai selera" data-en="1 whole chicken, cut into pieces">1 ekor ayam, potong sesuai selera</li>
-          <li data-id="500 ml santan" data-en="500 ml coconut milk">500 ml santan</li>
-          <li data-id="2 batang serai, memarkan" data-en="2 stalks of lemongrass, bruised">2 batang serai, memarkan</li>
-          <li data-id="3 lembar daun salam" data-en="3 Indonesian bay leaves">3 lembar daun salam</li>
-          <li data-id="Lengkuas secukupnya" data-en="Galangal, as needed">Lengkuas secukupnya</li>
-          <li data-id="Garam dan gula secukupnya" data-en="Salt and sugar, to taste">Garam dan gula secukupnya</li>
-          <li data-id="Minyak untuk menumis" data-en="Cooking oil">Minyak untuk menumis</li>
+          <li data-id="1 kg daging ayam" data-en="1 kg chicken">1 kg daging ayam</li>
+          <li data-id="1200 ml air" data-en="1200 ml water">1200 ml air</li>
+          <li data-id="1 saset santan instan" data-en="1 sachet of instant coconut milk">1 saset santan instan</li>
+          <li data-id="2 lembar daun salam" data-en="2 Indonesian bay leaves">2 lembar daun salam</li>
+          <li data-id="4 lembar daun jeruk" data-en="4 kaffir lime leaves">4 lembar daun jeruk</li>
+          <li data-id="1 batang serai" data-en="1 stalk of lemongrass">1 batang serai</li>
+          <li data-id="2 cm lengkuas" data-en="2 cm galangal">2 cm lengkuas</li>
+          <li data-id="Garam" data-en="Salt">Garam</li>
+          <li data-id="Gula pasir" data-en="Granulated sugar">Gula pasir</li>
+          <li data-id="Kaldu ayam bubuk" data-en="Chicken stock powder">Kaldu ayam bubuk</li>
+          <li data-id="Bawang goreng" data-en="Fried shallots">Bawang goreng</li>
         </ul>
 
         <h3 style="margin-top:35px"
             data-id="Bumbu Halus"
-            data-en="Spice Paste">
+            data-en="Ground Spices">
           Bumbu Halus
         </h3>
 
         <ul>
-          <li data-id="6 siung bawang merah" data-en="6 shallots">6 siung bawang merah</li>
-          <li data-id="4 siung bawang putih" data-en="4 cloves of garlic">4 siung bawang putih</li>
-          <li data-id="3 butir kemiri" data-en="3 candlenuts">3 butir kemiri</li>
-          <li data-id="1 ruas kunyit" data-en="1 piece of turmeric">1 ruas kunyit</li>
-          <li data-id="Ketumbar secukupnya" data-en="Coriander, as needed">Ketumbar secukupnya</li>
+          <li data-id="10 siung bawang merah" data-en="10 shallots">10 siung bawang merah</li>
+          <li data-id="5 siung bawang putih" data-en="5 cloves of garlic">5 siung bawang putih</li>
+          <li data-id="4 butir kemiri" data-en="4 candlenuts">4 butir kemiri</li>
+          <li data-id="2 ruas jari kunyit" data-en="2 finger-length pieces of turmeric">2 ruas jari kunyit</li>
+          <li data-id="1 ruas jari jahe" data-en="1 finger-length piece of ginger">1 ruas jari jahe</li>
+          <li data-id="1 sdt merica" data-en="1 tsp pepper">1 sdt merica</li>
+          <li data-id="1 sdt ketumbar" data-en="1 tsp coriander">1 sdt ketumbar</li>
         </ul>
       </div>
 
       <div>
-        <h3 data-id="Cara Memasak" data-en="Cooking Instructions">Cara Memasak</h3>
+        <h3 data-id="Langkah-Langkah Memasak Opor Ayam"
+            data-en="Opor Ayam Cooking Instructions">
+          Langkah-Langkah Memasak Opor Ayam
+        </h3>
 
         <ol>
-          <li data-id="Haluskan bawang merah, bawang putih, kemiri, kunyit, dan ketumbar."
-              data-en="Blend the shallots, garlic, candlenuts, turmeric, and coriander into a paste.">
-            Haluskan bawang merah, bawang putih, kemiri, kunyit, dan ketumbar.
+          <li data-id="Rebus ayam selama 5 menit, lalu angkat dan bilas hingga bersih."
+              data-en="Boil the chicken for 5 minutes, then remove it and rinse thoroughly.">
+            Rebus ayam selama 5 menit, lalu angkat dan bilas hingga bersih.
           </li>
-          <li data-id="Panaskan minyak, kemudian tumis bumbu halus hingga harum."
-              data-en="Heat the oil and sauté the spice paste until fragrant.">
-            Panaskan minyak, kemudian tumis bumbu halus hingga harum.
+
+          <li data-id="Sangrai merica, ketumbar, dan kemiri, lalu haluskan bersama bumbu lainnya."
+              data-en="Toast the pepper, coriander, and candlenuts, then grind them with the other spices.">
+            Sangrai merica, ketumbar, dan kemiri, lalu haluskan bersama bumbu lainnya.
           </li>
-          <li data-id="Masukkan serai, daun salam, dan lengkuas. Aduk hingga tercampur."
-              data-en="Add the lemongrass, bay leaves, and galangal. Stir well.">
-            Masukkan serai, daun salam, dan lengkuas. Aduk hingga tercampur.
+
+          <li data-id="Tumis bumbu halus bersama bawang dan rempah hingga harum dan matang."
+              data-en="Sauté the ground spices with the aromatics and herbs until fragrant and cooked.">
+            Tumis bumbu halus bersama bawang dan rempah hingga harum dan matang.
           </li>
-          <li data-id="Masukkan potongan ayam, lalu aduk hingga ayam terbalut bumbu."
-              data-en="Add the chicken pieces and stir until they are coated with the spices.">
-            Masukkan potongan ayam, lalu aduk hingga ayam terbalut bumbu.
+
+          <li data-id="Masukkan ayam, aduk hingga bumbu meresap."
+              data-en="Add the chicken and stir until it is coated with the spices.">
+            Masukkan ayam, aduk hingga bumbu meresap.
           </li>
-          <li data-id="Tuangkan santan secara perlahan sambil terus diaduk."
-              data-en="Gradually pour in the coconut milk while stirring.">
-            Tuangkan santan secara perlahan sambil terus diaduk.
+
+          <li data-id="Tambahkan air, santan, garam, gula, dan kaldu bubuk."
+              data-en="Add the water, coconut milk, salt, sugar, and chicken stock powder.">
+            Tambahkan air, santan, garam, gula, dan kaldu bubuk.
           </li>
-          <li data-id="Masak dengan api sedang hingga ayam matang dan bumbu meresap."
-              data-en="Cook over medium heat until the chicken is fully cooked and the spices are absorbed.">
-            Masak dengan api sedang hingga ayam matang dan bumbu meresap.
+
+          <li data-id="Masak dengan api kecil hingga ayam empuk dan kuah mengental. Koreksi rasa."
+              data-en="Cook over low heat until the chicken is tender and the sauce thickens. Adjust the seasoning to taste.">
+            Masak dengan api kecil hingga ayam empuk dan kuah mengental. Koreksi rasa.
           </li>
-          <li data-id="Tambahkan garam dan gula sesuai selera. Opor ayam siap disajikan."
-              data-en="Season with salt and sugar to taste. The opor ayam is ready to serve.">
-            Tambahkan garam dan gula sesuai selera. Opor ayam siap disajikan.
+
+          <li data-id="Sajikan opor ayam dengan taburan bawang goreng."
+              data-en="Serve the opor ayam topped with fried shallots.">
+            Sajikan opor ayam dengan taburan bawang goreng.
           </li>
         </ol>
       </div>
@@ -774,10 +790,12 @@
     </p>
 
     <div class="video-container">
-      <video controls>
-        <source src="videos/video-opor.mp4" type="video/mp4">
-        Browser kamu tidak mendukung pemutaran video.
-      </video>
+      <iframe
+        src="https://www.youtube.com/embed/wqtMbfsC8N0"
+        title="Vlog Pembuatan Opor Ayam"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
   </section>
 
