@@ -344,6 +344,14 @@
       transition: .3s;
     }
 
+    /* POSTER RESEP AGAR TIDAK TERPOTONG */
+
+    .recipe-visuals img.poster-image {
+      height: auto;
+      object-fit: contain;
+      align-self: start;
+    }
+
     .recipe-visuals img:hover {
       transform: translateY(-5px);
       box-shadow: 0 14px 30px rgba(62,28,36,.16);
@@ -683,8 +691,8 @@
     </div>
 
     <div class="recipe-visuals">
-      <img src="images/opor-recipe.jpg" alt="Hidangan opor ayam">
-      <img src="images/poster-resep.jpg" alt="Poster resep opor ayam">
+      <img src="images/poster-resep.jpg" alt="Foto bahan opor ayam">
+      <img class="poster-image" src="images/opor-recipe.jpg" alt="Poster resep opor ayam">
     </div>
 
     <div class="recipe-details">
